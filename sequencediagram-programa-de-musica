@@ -1,0 +1,27 @@
+title Visual Studio | C# | App de Música
+bottomparticipants
+actor Usuário
+participant App Screen Sound
+participant Registro de Bandas
+participant Lista de Bandas
+participant Avaliações de Banda
+participant Média de Avaliações
+participant Flag -1
+Usuário->App Screen Sound: Abre aplicativo
+abox left of App Screen Sound#steelblue:Exibe menu
+Usuário->Registro de Bandas: Registra banda
+Registro de Bandas-->Lista de Bandas: Inclui a Banda na Lista
+Usuário->Avaliações de Banda:Registra Avaliação de Banda 
+Avaliações de Banda-->Lista de Bandas:Verifica se a Banda existe na lista
+Avaliações de Banda-->Registro de Bandas:Se não existe, retorna para registro
+Avaliações de Banda-->Usuário: Notifica o Usuário sobre a inexistência da banda e redireciona para registro
+Avaliações de Banda-->Avaliações de Banda:Se existe, inclui na lista a avaliação
+Usuário->Média de Avaliações:Aciona lista de avaliações da banda que desejar
+Média de Avaliações-->Lista de Bandas:Verifica se a banda existe
+Média de Avaliações-->Registro de Bandas:Se não existe, retorna para registro
+Média de Avaliações-->Usuário: Notifica sobre a Inexistência da banda e redireciona para registro
+Média de Avaliações-->Avaliações de Banda:Se existe verifica avaliações na lista
+Média de Avaliações-->Usuário:Retorna média de avaliações
+Usuário->Flag -1: Chama a flag
+Flag -1-->Usuário: Exibe mensagem de encerramento
+box over Flag -1#red:Finaliza App
