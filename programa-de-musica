@@ -1,4 +1,3 @@
-// Screen Sound
 using System.Collections.Generic;
  
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Sound";
