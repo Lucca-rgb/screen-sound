@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+sing System.Collections.Generic;
  
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Sound";
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
